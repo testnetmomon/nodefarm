@@ -44,7 +44,7 @@ python npay-proxy.py
 # How to Get NODEPAY User ID Using Android Device
 
 1. Download and install [Kiwi Browser](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&hl=en).
-2. Login to the GRASS web and go to the dashboard.
+2. Login to the NODEPAY web and go to the dashboard.
 3. Open the **Developer Tools** in the Kiwi browser.
 4. Go to the **Console** tab and paste this code:
 ```
