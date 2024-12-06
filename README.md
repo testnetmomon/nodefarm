@@ -22,7 +22,7 @@ It is recommended to use **Python 3.10**.
 
 Run the following command to install the necessary packages:
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -31,12 +31,12 @@ pip install -r requirements.txt
 You can run the script using the following commands:
 
 ### Using Free Proxies (Automatically Assigned)
-```bash
+```
 python npay-free.py
 ```
 This script will automatically assign free proxies using the **Proxyscrape API**.
 ### Using Personal Proxies
-```bash
+```
 python npay-proxy.py
 ```
 ## FOR ANDROID
@@ -58,7 +58,7 @@ localStorage.getItem('np_webapp_token')
 After installing Termux, ensure you have allowed storage permission for Termux (device app) settings.  
 Alternatively, run this command in Termux:
 
-```bash
+```
 termux-setup-storage
 ```
 
@@ -66,11 +66,19 @@ termux-setup-storage
 
 Run the following commands:
 
-```bash
+```
 pkg update && upgrade
+```
+```
 pkg install tur-repo
+```
+```
 pkg install python-is-python3.10
+```
+```
 pkg install -y rust binutils
+```
+```
 CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')" pip install maturin
 ```
 
