@@ -1,4 +1,5 @@
 ## NODEPAY FARMING USING PROXIES
+- Multi account keep-alive support.
 
 # Paste your proxies inside proxy.txt and the token inside tokens.txt
 
