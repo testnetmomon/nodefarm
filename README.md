@@ -28,14 +28,6 @@ pip install -r requirements.txt
 
 ## Running the Script
 
-You can run the script using the following commands:
-
-### Using Free Proxies (Automatically Assigned)
-```
-python npay-free.py
-```
-This script will automatically assign free proxies using the **Proxyscrape API**.
-### Using Personal Proxies
 ```
 python npay-proxy.py
 ```
