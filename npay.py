@@ -34,6 +34,7 @@ last_ping_time = {}
 
 def uuidv4():
     return str(uuid.uuid4())
+
 def show_banner():
     print(Fore.MAGENTA + banner + Style.RESET_ALL)
 
@@ -132,7 +133,7 @@ async def ping(proxy, token):
     current_time = time.time()
 
     if proxy in last_ping_time and (current_time - last_ping_time[proxy]) < PING_INTERVAL:
-        log_message(f"Skipping ping for proxy {proxy}, not enough time elapsed", Fore.YELLOW)
+        log_message(f"Skipping ping for {token} with proxy {proxy}, not enough time elapsed", Fore.YELLOW)
         return
 
     last_ping_time[proxy] = current_time
@@ -147,13 +148,13 @@ async def ping(proxy, token):
 
         response = await call_api(DOMAIN_API["PING"], data, proxy, token)
         if response["code"] == 0:
-            log_message(f"Ping SUCCESSFUL for {proxy} - IP Score {response['data']['ip_score']}", Fore.GREEN)
+            log_message(f"Ping SUCCESSFUL for {token} with {proxy} - IP Score {response['data']['ip_score']}", Fore.GREEN)
             RETRIES = 0
             status_connect = CONNECTION_STATES["CONNECTED"]
         else:
             handle_ping_fail(proxy, response)
     except Exception as e:
-        log_message(f"Ping failed via proxy {proxy}: {e}", Fore.RED)
+        log_message(f"Ping failed for {token} via {proxy}: {e}", Fore.RED)
         handle_ping_fail(proxy, None)
 
 def handle_ping_fail(proxy, response):
@@ -220,8 +221,8 @@ async def render_profile_info(proxy, token):
 
 async def main():
     all_proxies = load_proxies(PROXY_FILE)
-
     tokens = load_tokens_from_file(TOKEN_FILE)
+
     if not tokens:
         log_message("Token cannot be empty. Exiting the program.", Fore.RED)
         exit()
@@ -229,38 +230,19 @@ async def main():
         log_message("Proxies cannot be empty. Exiting the program.", Fore.RED)
         exit()
 
+    tasks = []
+
     for token in tokens:
-        log_message("Performing daily claim...", Fore.YELLOW)
-        dailyclaim(token)
+        tasks.append(asyncio.create_task(async_dailyclaim(token)))
 
-    while True:
-        for token in tokens:
-            active_proxies = [
-                proxy for proxy in all_proxies if is_valid_proxy(proxy)][:100]
-            tasks = {asyncio.create_task(render_profile_info(
-                proxy, token)): proxy for proxy in active_proxies}
+    for token, proxy in zip(tokens, all_proxies):
+        tasks.append(asyncio.create_task(render_profile_info(proxy, token)))
 
-            done, pending = await asyncio.wait(tasks.keys(), return_when=asyncio.FIRST_COMPLETED)
-            for task in done:
-                failed_proxy = tasks[task]
-                if task.result() is None:
-                    log_message(f"Removing and replacing failed proxy: {failed_proxy}", Fore.RED)
-                    active_proxies.remove(failed_proxy)
-                    if all_proxies:
-                        new_proxy = all_proxies.pop(0)
-                        if is_valid_proxy(new_proxy):
-                            active_proxies.append(new_proxy)
-                            new_task = asyncio.create_task(
-                                render_profile_info(new_proxy, token))
-                            tasks[new_task] = new_proxy
-                tasks.pop(task)
+    await asyncio.gather(*tasks)
 
-            for proxy in set(active_proxies) - set(tasks.values()):
-                new_task = asyncio.create_task(
-                    render_profile_info(proxy, token))
-                tasks[new_task] = proxy
-            await asyncio.sleep(3)
-    await asyncio.sleep(10)
+async def async_dailyclaim(token):
+    log_message(f"Performing daily claim for token: {token}", Fore.YELLOW)
+    dailyclaim(token)
 
 def log_message(message, color):
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
