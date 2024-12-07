@@ -7,8 +7,8 @@
 - **Paste your proxies inside ```proxy.txt``` and the token inside ```tokens.txt```**
 - **To use multiple accounts, in which case one proxy from each line will be assigned to one token in each line (1 token = 1 proxy), paste all your tokens in the ```token.txt``` file and make sure there are matching number of proxies in the ```proxy.txt``` file.**
 
-
-# How to Get Nodepay Token -
+# PC (WINDOWS)
+## How to Get Nodepay Token -
 
 1. Open your browser and login to the NODEPAY dashboard.
 2. Press `F12` to open the **Inspect Elements** panel.
@@ -20,12 +20,12 @@ localStorage.getItem('np_webapp_token')
 4. You will receive your user ID, which looks like this: `"eyJhbG........"`
 5. If you can't paste, type `allow pasting` and press Enter.
 
-# Recommended Python Version
+## Recommended Python Version
 
 It is recommended to use **Python 3.10**.  
 [Download Python 3.10 here](https://www.python.org/downloads/release/python-3100/).
 
-# Install Requirements
+## Install Requirements
 
 Run the following command to install the necessary packages:
 
@@ -33,7 +33,7 @@ Run the following command to install the necessary packages:
 pip install -r requirements.txt
 ```
 
-# Running the Script
+## Running the Script
 
 ```
 python npay-proxy.py
