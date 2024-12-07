@@ -34,6 +34,7 @@ last_ping_time = {}
 
 def uuidv4():
     return str(uuid.uuid4())
+
 def show_banner():
     print(Fore.MAGENTA + banner + Style.RESET_ALL)
 
@@ -156,16 +157,6 @@ async def ping(proxy, token):
         log_message(f"Ping failed via proxy {proxy}: {e}", Fore.RED)
         handle_ping_fail(proxy, None)
 
-def handle_ping_fail(proxy, response):
-    global RETRIES, status_connect
-    RETRIES += 1
-    if response and response.get("code") == 403:
-        handle_logout(proxy)
-    elif RETRIES < 2:
-        status_connect = CONNECTION_STATES["DISCONNECTED"]
-    else:
-        status_connect = CONNECTION_STATES["DISCONNECTED"]
-
 async def call_api(url, data, proxy, token):
     headers = {
         "Authorization": f"Bearer {token}",
@@ -182,7 +173,7 @@ async def call_api(url, data, proxy, token):
         response.raise_for_status()
         return valid_resp(response.json())
     except Exception as e:
-        log_message(f"Error during API call: {e}", Fore.RED)
+        log_message(f"Error during API call to {url} via proxy {proxy}: {e}", Fore.RED)
         raise ValueError(f"Failed API call to {url}")
 
 async def render_profile_info(proxy, token):
