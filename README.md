@@ -2,6 +2,8 @@
 - Daily Claim
 - Multi Account Keep-Alive Support.
 
+# [GET RESIDENTIAL PROXIES FROM HERE](https://proxy-sale.com/?partner_link=7w04Ij8gwl)
+
 # NOTE
 
 - **Paste your proxies inside ```proxy.txt``` and the token inside ```tokens.txt```**
