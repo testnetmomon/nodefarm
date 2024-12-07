@@ -90,7 +90,7 @@ git clone https://github.com/ashtrobe/nodepay-farm.git
 ```
 ## Install Requirements
 ```
-pip install -r requirements.txt
+pip3.10 install -r requirements.txt
 ```
 ## Put your token(s) inside ```token.txt``` file and proxies inside ```proxy.txt``` file
 ```
