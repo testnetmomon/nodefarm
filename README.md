@@ -2,9 +2,10 @@
 - Daily Claim
 - Multi Account Keep-Alive Support.
 
-## Paste your proxies inside proxy.txt and the token inside tokens.txt
+# NOTE
 
-## **To use multiple accounts, in which case one proxy from each line will be assigned to one token in each line (1 token = 1 proxy), paste all your tokens in the ```token.txt``` file and make sure there are matching number of proxies in the ```proxy.txt``` file.**
+**Paste your proxies inside ```proxy.txt``` and the token inside ```tokens.txt```**
+**To use multiple accounts, in which case one proxy from each line will be assigned to one token in each line (1 token = 1 proxy), paste all your tokens in the ```token.txt``` file and make sure there are matching number of proxies in the ```proxy.txt``` file.**
 
 
 # How to Get Nodepay Token -
