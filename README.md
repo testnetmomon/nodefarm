@@ -106,5 +106,5 @@ nano proxy.txt
 Example Command - ```cp libcurl-impersonate-chrome.so.4 /data/data/com.termux/files/usr/lib```
 ## Run the Script
 ```
-python npay.py
+python3.10 npay.py
 ```
