@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ## Running the Script
 
 ```
-python npay-proxy.py
+python npay.py
 ```
 # FOR ANDROID
 
@@ -108,5 +108,5 @@ nano proxy.txt
 Example Command - ```cp libcurl-impersonate-chrome.so.4 /data/data/com.termux/files/usr/lib```
 ## Run the Script
 ```
-python3.10 npay.py
+python npay.py
 ```
