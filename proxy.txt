@@ -1,2 +1,10 @@
-## example proxy format
-http://user:pass@ip:port
+http://pudin2605:pudin2605@198.23.239.134:6540
+http://pudin2605:pudin2605@207.244.217.165:6712
+http://pudin2605:pudin2605@107.172.163.27:6543
+http://pudin2605:pudin2605@64.137.42.112:5157
+http://pudin2605:pudin2605@173.211.0.148:6641
+http://pudin2605:pudin2605@161.123.152.115:6360
+http://pudin2605:pudin2605@167.160.180.203:6754
+http://pudin2605:pudin2605@154.36.110.199:6853
+http://pudin2605:pudin2605@173.0.9.70:5653
+http://pudin2605:pudin2605@173.0.9.209:5792
