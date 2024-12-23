@@ -8,3 +8,4 @@ http://pudin2605:pudin2605@167.160.180.203:6754
 http://pudin2605:pudin2605@154.36.110.199:6853
 http://pudin2605:pudin2605@173.0.9.70:5653
 http://pudin2605:pudin2605@173.0.9.209:5792
+http://brd-customer-hl_2b63dd87-zone-datacenter_proxy1:8pm9nehkbu2c@brd.superproxy.io:33335
