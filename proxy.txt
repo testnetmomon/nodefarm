@@ -1,11 +1,2 @@
-http://pudin2605:pudin2605@198.23.239.134:6540
-http://pudin2605:pudin2605@207.244.217.165:6712
-http://pudin2605:pudin2605@107.172.163.27:6543
-http://pudin2605:pudin2605@64.137.42.112:5157
-http://pudin2605:pudin2605@173.211.0.148:6641
-http://pudin2605:pudin2605@161.123.152.115:6360
-http://pudin2605:pudin2605@167.160.180.203:6754
-http://pudin2605:pudin2605@154.36.110.199:6853
-http://pudin2605:pudin2605@173.0.9.70:5653
-http://pudin2605:pudin2605@173.0.9.209:5792
+http://brd-customer-hl_2b63dd87-zone-mobile_proxy1:bjmpjvfnaw6i@brd.superproxy.io:33335
 http://brd-customer-hl_2b63dd87-zone-datacenter_proxy1:8pm9nehkbu2c@brd.superproxy.io:33335
