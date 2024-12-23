@@ -3,3 +3,6 @@ http://brd-customer-hl_2b63dd87-zone-datacenter_proxy2:n1oyf4mrcvtt@brd.superpro
 http://brd-customer-hl_2b63dd87-zone-datacenter_proxy3:sqv7qj197iih@brd.superproxy.io:33335
 http://brd-customer-hl_2b63dd87-zone-datacenter_proxy4:n1lqg0yneoze@brd.superproxy.io:33335
 http://brd-customer-hl_2b63dd87-zone-datacenter_proxy5:3oqyzkxs607b@brd.superproxy.io:33335
+http://brd-customer-hl_2b63dd87-zone-datacenter_proxy6:ufmp5eo4lsh7@brd.superproxy.io:33335
+http://brd-customer-hl_2b63dd87-zone-datacenter_proxy7:52v19zix7bgs@brd.superproxy.io:33335
+http://brd-customer-hl_2b63dd87-zone-datacenter_proxy8:69371p5t5zxp@brd.superproxy.io:33335
