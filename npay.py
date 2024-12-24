@@ -84,7 +84,7 @@ def dailyclaim(token):
     try:
         response = requests.post(url, headers=headers, json=data, timeout=15)
         if response.status_code != 200:
-            log_message("Daily Claim FAILED, maybe it's already claimed?"+response, Fore.RED)
+            log_message("Daily Claim FAILED, maybe it's already claimed?", Fore.RED)
             return False
 
         response_json = response.json()
